@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multi-Agent Gemini AI System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Multi-Agent AI System (Gemini)</h1>
+        <form action="/generate" method="post">
+            <textarea name="user_input" placeholder="Enter your idea or question..." required>{{ user_input or '' }}</textarea>
+            <button type="submit">Generate Response</button>
+        </form>
+
+        {% if thinker %}
+        <div class="response-section">
+            <h2>🤔 Thinker Agent</h2>
+            <div>{{ thinker|safe }}</div>
+            <h2>🔍 Checker Agent</h2>
+            <div>{{ checker|safe }}</div>
+
+            <h2>✅ Finisher Agent</h2>
+            <div>{{ final|safe }}</div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
