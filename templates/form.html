@@ -12,8 +12,8 @@
             <textarea name="user_input" placeholder="Enter your idea or question..." required>{{ user_input or '' }}</textarea>
             <button type="submit">Generate Response</button>
         </form>
-    <div id="loader" style="display:none;">⏳ Loading... Please wait</div>
-    <div id="loader" class="spinner" style="display:none;"></div>
+    <div id="loader" class="spinner" style="display: none;"></div>
+
 
 
         {% if thinker %}
@@ -29,11 +29,13 @@
         {% endif %}
     </div>
     <script>
-  const form = document.querySelector("form");
-  const loader = document.getElementById("loader");
+  window.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector("form");
+    const loader = document.getElementById("loader");
 
-  form.addEventListener("submit", () => {
-    loader.style.display = "block";
+    form.addEventListener("submit", () => {
+      loader.style.display = "block"; // show spinner
+    });
   });
 </script>
 
