@@ -12,6 +12,7 @@
             <textarea name="user_input" placeholder="Enter your idea or question..." required>{{ user_input or '' }}</textarea>
             <button type="submit">Generate Response</button>
         </form>
+    <div id="loader" style="display:none;">⏳ Loading... Please wait</div>
 
         {% if thinker %}
         <div class="response-section">
@@ -25,5 +26,14 @@
         </div>
         {% endif %}
     </div>
+    <script>
+  const form = document.querySelector("form");
+  const loader = document.getElementById("loader");
+
+  form.addEventListener("submit", () => {
+    loader.style.display = "block";
+  });
+</script>
+
 </body>
 </html>
